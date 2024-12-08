@@ -46,17 +46,17 @@
   # Checkout to the latest master/main
   master = !git checkout master && git pull --prune
   main = !git checkout main && git pull --prune
-  
+
   # Checkout to the latest develop
   develop = !git checkout develop && git pull --prune
 
   # Merge latest master/main to current branch
   remaster = !git checkout master && git pull --rebase --prune && git checkout - && git merge master
   remain = !git checkout main && git pull --rebase --prune && git checkout - && git merge main
-  
+
   # When doing "git git log" or some such, do not complain about "git"
   git = !git
-  
+
   # Commits log with pretty format
   l = log --all --graph --decorate --oneline
 
@@ -114,7 +114,7 @@
 #   git config -f ~/.gitlocal user.name "Name Lastname"
 # Example .gitlocal:
 # [user]
-#   name = Denys Dovhan
-#   email = denysdovhan@gmail.com
+#   name = Tymur Bolotiukh
+#   email = timur.bolotyuh@gmail.com
 [include]
   path = ~/.gitlocal

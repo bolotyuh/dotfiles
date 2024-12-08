@@ -22,9 +22,3 @@
 
     - description: Installing zgen
       command: ./scripts/zgen
-
-    - description: Scaffolding Project folders
-      command: ./scripts/projects
-
-    - description: Run ./scripts/bootstrap to bootstrap new machine
-      command: echo "bash $DOTFILES/scripts/bootstrap"

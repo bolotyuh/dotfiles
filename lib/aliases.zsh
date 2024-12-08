@@ -24,13 +24,7 @@ alias clr='clear'
 alias q="~ && clear"
 
 # Folders Shortcuts
-[ -d ~/Downloads ]            && alias dl='cd ~/Downloads'
-[ -d ~/Desktop ]              && alias dt='cd ~/Desktop'
-[ -d ~/Projects ]             && alias pj='cd ~/Projects'
-[ -d ~/Projects/Forks ]       && alias pjf='cd ~/Projects/Forks'
-[ -d ~/Projects/Job ]         && alias pjj='cd ~/Projects/Job'
-[ -d ~/Projects/Playground ]  && alias pjl='cd ~/Projects/Playground'
-[ -d ~/Projects/Repos ]       && alias pjr='cd ~/Projects/Repos'
+[ -d ~/projects ]             && alias pj='cd ~/projects'
 
 # Commands Shortcuts
 alias e="$EDITOR"
@@ -65,10 +59,6 @@ alias getpage='wget --no-clobber --page-requisites --html-extension --convert-li
 # Download file with original filename
 alias get="curl -O -L"
 
-# Yarn
-alias ybw="yarn build:watch"
-alias yba="yarn build:all"
-alias ytw="yarn test:watch"
 
 # Use tldr as help util
 if _exists tldr; then

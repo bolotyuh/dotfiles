@@ -1,7 +1,3 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-# ------------------------------------------------------------------------------
-
 #
 # ~/.zshrc
 #
@@ -32,16 +28,8 @@ _extend_path() {
 # Add custom bin to $PATH
 _extend_path "$HOME/.local/bin"
 _extend_path "$DOTFILES/bin"
-_extend_path "$HOME/.npm-global/bin"
-_extend_path "$HOME/.rvm/bin"
-_extend_path "$HOME/.yarn/bin"
-_extend_path "$HOME/.config/yarn/global/node_modules/.bin"
 _extend_path "$HOME/.bun/bin"
 
-# Extend $NODE_PATH
-if [ -d ~/.npm-global ]; then
-  export NODE_PATH="$NODE_PATH:$HOME/.npm-global/lib/node_modules"
-fi
 
 # Default pager
 export PAGER='less'
@@ -93,9 +81,6 @@ fi
 # Dependencies
 # ------------------------------------------------------------------------------
 
-# Spaceship project directory (for local development)
-SPACESHIP_PROJECT="$HOME/Projects/Repos/spaceship/spaceship-prompt"
-
 # Reset zgen on change
 ZGEN_RESET_ON_CHANGE=(
   ${HOME}/.zshrc
@@ -116,22 +101,16 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/history-substring-search
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/command-not-found
-    zgen oh-my-zsh plugins/npm
-    zgen oh-my-zsh plugins/yarn
-    zgen oh-my-zsh plugins/nvm
     zgen oh-my-zsh plugins/fnm
     zgen oh-my-zsh plugins/extract
     zgen oh-my-zsh plugins/ssh-agent
     zgen oh-my-zsh plugins/gpg-agent
     zgen oh-my-zsh plugins/macos
     zgen oh-my-zsh plugins/vscode
-    zgen oh-my-zsh plugins/gh
     zgen oh-my-zsh plugins/common-aliases
     zgen oh-my-zsh plugins/direnv
     zgen oh-my-zsh plugins/docker
     zgen oh-my-zsh plugins/docker-compose
-    zgen oh-my-zsh plugins/node
-    zgen oh-my-zsh plugins/deno
 
     # Custom plugins
     zgen load chriskempson/base16-shell
@@ -140,26 +119,18 @@ if ! zgen saved; then
     zgen load hlissner/zsh-autopair
     zgen load zsh-users/zsh-syntax-highlighting
     zgen load zsh-users/zsh-autosuggestions
-    
+
     # Files
     zgen load $DOTFILES/lib
     zgen load $DOTFILES/custom
 
-    # Load Spaceship prompt from remote
-    if [[ ! -d "$SPACESHIP_PROJECT" ]]; then
-      zgen load spaceship-prompt/spaceship-prompt spaceship
-    fi
+    zgen load spaceship-prompt/spaceship-prompt spaceship
 
     # Completions
     zgen load zsh-users/zsh-completions src
 
     # Save all to init script
     zgen save
-fi
-
-# Load Spaceship form local project
-if [[ -d "$SPACESHIP_PROJECT" ]]; then
-  source "$SPACESHIP_PROJECT/spaceship.zsh"
 fi
 
 # ------------------------------------------------------------------------------
@@ -200,8 +171,3 @@ fi
 if [[ -f "$HOME/.zshlocal" ]]; then
   source "$HOME/.zshlocal"
 fi
-
-# ------------------------------------------------------------------------------
-
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
