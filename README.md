@@ -1,4 +1,4 @@
-# Denys Dovhan’s dotfiles
+# Tymur Bolotiukh’s dotfiles
 
 <p align="center">
   <img alt="Spaceship with Hyper and One Dark" src="https://user-images.githubusercontent.com/10276208/36086434-5de52ace-0ff2-11e8-8299-c67f9ab4e9bd.gif" width="980px">
@@ -37,7 +37,7 @@ Clone dotfiles repo:
 
 ```sh
 # Clone dotfiles repo
-git clone https://github.com/denysdovhan/dotfiles.git $HOME/.dotfiles
+git clone https://github.com/bolotyuh/dotfiles.git $HOME/.dotfiles
 
 # Go to the dotfiles directory
 cd $HOME/.dotfiles
@@ -65,11 +65,11 @@ This command will update dotfiles, their dependencies, `brew` or `apt-get` packa
 I suggest you to organize project folder as follows:
 
 ```
-~/Projects
-├── Forks       # for GitHub fork
-├── Job         # for job projects
-├── Playground  # for short-term experiments
-└── Repos       # for long-term projects
+~/projects
+├── forks       # for GitHub fork
+├── job         # for job projects
+├── playground  # for short-term experiments
+└── repos       # for long-term projects
 ```
 
 ### Aliases
